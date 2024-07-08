@@ -46,3 +46,11 @@ The program still works after removing the call.
 > You can compare the game loop you’ll need when working with `turtle`, to the game loop structures in other Python games packages such as `pygame` and `arcade`.
 
 按住空格连续发射大量子弹，可以看到性能的下降，当子弹离开屏幕从而被移除时，性能又重新回升
+
+### Step 4
+
+#### Spawn New Aliens
+
+#### Move the Aliens
+
+> If the aliens aren’t moving at the right speed, you can adjust their speed by using a different value for `ALIEN_SPEED`. Keep in mind that the speed of the game will vary depending on the system you’re working on. You’ll set the frame rate of the game in the last step of this tutorial, so you don’t need to worry about the speed for now.
