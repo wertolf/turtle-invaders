@@ -1,58 +1,26 @@
-# Turtle Space Invaders Clone
+# Turtle Invaders
 
-## https://realpython.com/build-python-turtle-game-space-invaders-clone/
+A Space Invaders clone made using `turtle`, following the Real Python tutorial [Build a Python Turtle Game: Space Invaders Clone](./notes.md).
 
-### Prerequisites
+![](./screenshot.png)
 
-* https://realpython.com/beginners-guide-python-turtle/
+## Installation
 
-> You can always stop and review the resources linked here if you get stuck.
+All you need is a working Python 3.9+.
 
-### Step 1
+## Usage
 
-#### Create the Screen
+```sh
+python turtle_invaders.py
+```
 
-#### Create the Laser Cannon
+## Release History
 
-> The center of the screen has the coordinates `(0, 0)`.
+* v1.0
+  * extra polishing
+* v0.1
+  * working minimal
 
-### Step 2
+## License
 
-#### Move the `turtle` Object
-
-对于游戏引擎来说，处理键盘按键比处理鼠标的移动和点击更容易
-
-> By default, the `turtle` module doesn’t use computing resources to listen for keypresses while the program is running. Calling `window.listen()` overrides this default.
-
-> Functions used as arguments for `.onkeypress()` can’t accept any required arguments. Although the functions can have a `return` statement, you can’t access the returned data in your program since these functions are called from within `.onkeypress()`.
-
-### Step 3
-
-#### Create Lasers
-
-To avoid complicating the code, this tutorial makes some simplifications:
-1. The height of the cannon is hardcoded to 20 pixels. This value is used in `draw_cannon()` to place the rectangles that make up the cannon, and in `create_laser()`, to place the laser’s starting point at the tip of the cannon. In general, you should try to avoid hardcoding values. This value could be defined as a percentage of the screen height, and the appropriate changes made to `draw_cannon()` to set the widths and heights of the three rectangles used to draw the cannon.
-2. The function `create_laser()` modifies a list in the program’s global scope. In general, it’s best for functions to return values instead of changing the state of existing global variables. However, you’ll call `create_laser()` through a keypress, and this prevents you from accessing the returned objects.
-
-#### Create the Game Loop to Move the Lasers
-
-> Each iteration of the game loop represents a frame of the game.
-
-> A turtle program runs an event loop, which starts when you call `turtle.done()` and handles events such as keypresses.
-
-But the `turtle.done()` call is outside the `while` loop, so its unreachable.
-The program still works after removing the call.
-
-But later in Step 6 when we exit the `while` loop, this call will be needed again.
-
-> You can compare the game loop you’ll need when working with `turtle`, to the game loop structures in other Python games packages such as `pygame` and `arcade`.
-
-按住空格连续发射大量子弹，可以看到性能的下降，当子弹离开屏幕从而被移除时，性能又重新回升
-
-### Step 4
-
-#### Spawn New Aliens
-
-#### Move the Aliens
-
-> If the aliens aren’t moving at the right speed, you can adjust their speed by using a different value for `ALIEN_SPEED`. Keep in mind that the speed of the game will vary depending on the system you’re working on. You’ll set the frame rate of the game in the last step of this tutorial, so you don’t need to worry about the speed for now.
+This project is distributed under MIT license. See [LICENSE](./LICENSE) for more information.
