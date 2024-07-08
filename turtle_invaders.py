@@ -4,7 +4,7 @@ import turtle
 
 CANNON_STEP = 10
 LASER_LENGTH = 20
-LASER_SPEED = 0.2
+LASER_SPEED = 0.5
 ALIEN_SPAWN_INTERVAL = 1.2  # seconds
 ALIEN_SPEED = 0.05
 
@@ -94,6 +94,13 @@ def create_alien():
 
     aliens.append(alien)
 
+def remove_sprite(sprite, sprite_list):
+    sprite.clear()
+    sprite.hideturtle()
+    window.update()
+    sprite_list.remove(sprite)
+    turtle.turtles().remove(sprite)
+
 window.onkeypress(move_left, "Left")
 window.onkeypress(move_right, "Right")
 window.onkeypress(create_laser, "space")
@@ -111,10 +118,14 @@ while True:
         move_laser(laser)
         # remove laser if it goes off screen
         if laser.ycor() > TOP:
-            laser.clear()
-            laser.hideturtle()
-            lasers.remove(laser)
-            turtle.turtles().remove(laser)
+            remove_sprite(laser, lasers)
+            break
+        # check for collision with aliens
+        for alien in aliens.copy():
+            if laser.distance(alien) < 20:
+                remove_sprite(laser, lasers)
+                remove_sprite(alien, aliens)
+                break
     # spawn new aliens when time interval elapsed
     if time.time() - alien_timer > ALIEN_SPAWN_INTERVAL:
         create_alien()
