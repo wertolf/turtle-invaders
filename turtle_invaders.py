@@ -6,7 +6,7 @@ CANNON_STEP = 10
 LASER_LENGTH = 20
 LASER_SPEED = 0.5
 ALIEN_SPAWN_INTERVAL = 1.2  # seconds
-ALIEN_SPEED = 0.05
+ALIEN_SPEED = 0.1
 
 window = turtle.Screen()
 window.tracer(0)
@@ -112,7 +112,8 @@ draw_cannon()
 
 # game loop
 alien_timer = 0
-while True:
+game_running = True
+while game_running:
     # move all lasers
     for laser in lasers.copy():
         move_laser(laser)
@@ -133,5 +134,16 @@ while True:
     # move all aliens
     for alien in aliens:
         alien.forward(ALIEN_SPEED)
+        # check for game over
+        if alien.ycor() < FLOOR_LEVEL:
+            game_running = False
+            break
 
     window.update()
+
+splash_text = turtle.Turtle()
+splash_text.hideturtle()
+splash_text.color(1, 1, 1)
+splash_text.write("GAME OVER", font=("Courier", 40, "bold"), align="center")
+
+turtle.done()
