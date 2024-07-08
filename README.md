@@ -43,6 +43,8 @@ To avoid complicating the code, this tutorial makes some simplifications:
 But the `turtle.done()` call is outside the `while` loop, so its unreachable.
 The program still works after removing the call.
 
+But later in Step 6 when we exit the `while` loop, this call will be needed again.
+
 > You can compare the game loop you’ll need when working with `turtle`, to the game loop structures in other Python games packages such as `pygame` and `arcade`.
 
 按住空格连续发射大量子弹，可以看到性能的下降，当子弹离开屏幕从而被移除时，性能又重新回升
