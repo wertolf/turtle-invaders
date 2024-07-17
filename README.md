@@ -1,8 +1,10 @@
 # Turtle Invaders
 
-A Space Invaders clone made using `turtle`, following the Real Python tutorial [Build a Python Turtle Game: Space Invaders Clone](./notes.md).
+> mini Space Invaders clone via Python `turtle`
 
 ![](./screenshot.png)
+
+A Space Invaders clone made using `turtle`, following the Real Python tutorial [Build a Python Turtle Game: Space Invaders Clone](./notes.md).
 
 ## Installation
 
@@ -16,9 +18,9 @@ python turtle_invaders.py
 
 ## Release History
 
-* v1.0
+* v1.1
   * extra polishing
-* v0.1
+* v1.0
   * working minimal
 
 ## License

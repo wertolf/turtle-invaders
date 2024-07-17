@@ -1,4 +1,6 @@
-# [Build a Python Turtle Game: Space Invaders Clone](https://realpython.com/build-python-turtle-game-space-invaders-clone/)
+# Build a Python Turtle Game: Space Invaders Clone
+
+https://realpython.com/build-python-turtle-game-space-invaders-clone/
 
 ## Prerequisites
 
